@@ -1,0 +1,6 @@
+alias reboot="sudo reboot"
+alias shutdown="sudo shutdown -h now"
+
+alias apt-update="sudo apt-get update && sudo apt-get upgrade -y"
+alias apt-clean="sudo apt-get autoremove -y && sudo apt-get clean -y"
+alias glados-update="bash /home/$USER/.config/clash/update/update.sh"
