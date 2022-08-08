@@ -9,7 +9,7 @@ Remember, this project is only for experiment, do not abuse github pages server.
 
 And do not put too big files in your folder, otherwise it will take a long to load!
 
-![Demo](demo.png)
+![Demo](./image/demo.png)
 
 ## 2. How to Use
 
@@ -21,7 +21,7 @@ python ghpages-fileserver.py
 
 It will generate a `public` folder contains all your fils and some html files. You can directly open these html files in your browser.
 
-> Demo: [https://mr-addict.github.io/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
+> Demo: [https://mraddict.one/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
 
 ## 3. Have a Try
 
@@ -30,6 +30,10 @@ You can fork my repo and it will automatic generate a github pages smililar to t
 ```
 https://username.github.io/ghpages-fileserver
 ```
+
+Do not forget to enable github pages on your project after actions build finish:
+
+![Enable-github-pages](./image/enable-ghpages.png)
 
 ## 4. Github Pages Usage Limits
 

@@ -14,7 +14,7 @@ fi
 # 2. Config Powershell
 if [ ! -f /home/$USER/.config/powershell/Microsoft.PowerShell_profile.ps1 ];then
   [ ! -d /home/$USER/.config/powershell ] && mkdir /home/$USER/.config/powershell
-  wget -q https://mr-addict.github.io/ghpages-fileserver/config/pwsh/Microsoft.PowerShell_profile.ps1 -O /home/$USER/.config/powershell/Microsoft.PowerShell_profile.ps1
+  wget -q https://mraddict.one/ghpages-fileserver/config/pwsh/Microsoft.PowerShell_profile.ps1 -O /home/$USER/.config/powershell/Microsoft.PowerShell_profile.ps1
   if ! command -v oh-my-posh &>/dev/null ;then
     sed -i "$ a\# Init Oh-my-posh" /home/$USER/.config/powershell/Microsoft.PowerShell_profile.ps1
     sed -i "$ a\oh-my-posh --init --shell pwsh --config /home/$USER/.poshthemes/paradox.omp.json | Invoke-Expression" /home/$USER/.config/powershell/Microsoft.PowerShell_profile.ps1
