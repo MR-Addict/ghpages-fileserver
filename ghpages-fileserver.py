@@ -1,12 +1,13 @@
+from distutils import dir_util
 import os
 import shutil
 import datetime
 
+all_files = {}
 src_path = './src/'
 public_path = './public/'
 image_path = './image/'
-all_files = {}
-index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="https://mraddict.one/ghpages-fileserver/favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}</style></head><body><h2>'
+index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="https://mraddict.one/ghpages-fileserver/favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}h2 {padding-left: 8px;}</style></head><body><h2>'
 
 
 # 1. Convert all directroies files into a dictionary
@@ -31,17 +32,12 @@ if not os.path.exists(public_path+'favicon.png'):
 # 4. Generate html files
 for dir in all_files.keys():
     # 4. Table header
-    index = index_head
-    for dir_name in dir.replace('/src', '').split('/'):
-        if dir_name == '.':
-            index += '<a href="/">~</a>'
-        elif dir_name != '':
-            index += '/<a href="/'+dir_name+'">'+dir_name+'</a>'
+    index = index_head+'~'+dir.replace('./src', '')
     index += '</h2><table><tr><th style="width:50%">Name</th><th>Last Modeified</th></tr>'
 
     # 4.2 Add return link
     if len(dir.split('/')) == 3:
-        index += '<tr><td><a href="/" '
+        index += '<tr><td><a href="./" '
     else:
         index += '<tr><td><a href="../" '
     index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td></tr>'
@@ -53,7 +49,7 @@ for dir in all_files.keys():
             index += '<tr><td><i class="fa fa-folder"></i><a href="./' + \
                 file+'/">'+file+'</a></td><td>'
 
-        # 4.3.2 Add currnet file link
+        # 4.3.2 Add current file link
         else:
             index += '<tr><td><i class="fa fa-file"></i><a href="./' + \
                 file+'">'+file+'</a></td><td>'
