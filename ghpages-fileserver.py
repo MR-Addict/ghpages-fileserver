@@ -6,7 +6,7 @@ src_path = './src/'
 public_path = './public/'
 image_path = './image/'
 all_files = {}
-index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" type="image/png" href="favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}</style></head><body><h1>Index of '
+index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}</style></head><body><h1>Index of '
 
 
 # 1. Convert all directroies files into a dictionary
@@ -24,10 +24,13 @@ if os.path.exists(public_path):
 shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd()+'/'+public_path)
 
 # 3. Copy image favicon to public
-for dir in all_files.keys():
-    if not os.path.exists(dir.replace(src_path, public_path)+'favicon.png'):
-        shutil.copyfile(os.getcwd()+'/'+image_path+'favicon.png',
-                        os.getcwd()+'/'+dir.replace(src_path, public_path)+'favicon.png')
+# for dir in all_files.keys():
+#     if not os.path.exists(dir.replace(src_path, public_path)+'favicon.png'):
+#         shutil.copyfile(os.getcwd()+'/'+image_path+'favicon.png',
+#                         os.getcwd()+'/'+dir.replace(src_path, public_path)+'favicon.png')
+if not os.path.exists(public_path+'favicon.png'):
+    shutil.copyfile(os.getcwd()+'/'+image_path+'favicon.png',
+                    os.getcwd()+'/'+public_path+'favicon.png')
 
 # 4. Generate html files
 for dir in all_files.keys():
@@ -37,17 +40,17 @@ for dir in all_files.keys():
 
     # 4.2 Add return link
     if len(dir.split('/')) == 3:
-        index += '<tr><td><a href="./index.html" '
+        index += '<tr><td><a href="./" '
     else:
-        index += '<tr><td><a href="../index.html" '
+        index += '<tr><td><a href="../" '
     index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td></tr>'
 
     # 4.3 Table body
     for file in all_files[dir]:
         # 4.3.1 Add next Folder Link
         if os.path.isdir(dir+file):
-            index += '<tr><td><i class="fa fa-folder"></i><a href="./'+file+'/' + \
-                'index.html">'+file+'</a></td><td>'
+            index += '<tr><td><i class="fa fa-folder"></i><a href="./' + \
+                file+'/">'+file+'</a></td><td>'
 
         # 4.3.2 Add currnet file link
         else:

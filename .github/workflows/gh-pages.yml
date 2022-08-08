@@ -1,4 +1,4 @@
-name: build
+name: pages
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  pages:
     runs-on: ubuntu-latest
     steps:
       - name: checkout current branch
