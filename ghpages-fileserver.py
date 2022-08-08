@@ -19,7 +19,7 @@ def get_files(path):
 get_files(src_path)
 if os.path.exists(public_path):
     shutil.rmtree(os.getcwd()+public_path)
-shutil.copytree(os.getcwd()+src_path, os.getcwd()+public_path)
+shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd()+'/'+public_path)
 
 # Generate directories
 for dir in all_files.keys():
