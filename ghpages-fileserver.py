@@ -6,7 +6,7 @@ src_path = './src/'
 public_path = './public/'
 image_path = './image/'
 all_files = {}
-index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}</style></head><body><h1>Index of '
+index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="https://mraddict.one/ghpages-fileserver/favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}</style></head><body><h1>Index of '
 
 
 # 1. Convert all directroies files into a dictionary
@@ -23,11 +23,7 @@ if os.path.exists(public_path):
     shutil.rmtree(os.getcwd()+public_path)
 shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd()+'/'+public_path)
 
-# 3. Copy image favicon to public
-# for dir in all_files.keys():
-#     if not os.path.exists(dir.replace(src_path, public_path)+'favicon.png'):
-#         shutil.copyfile(os.getcwd()+'/'+image_path+'favicon.png',
-#                         os.getcwd()+'/'+dir.replace(src_path, public_path)+'favicon.png')
+# 3. Copy favicon image to public
 if not os.path.exists(public_path+'favicon.png'):
     shutil.copyfile(os.getcwd()+'/'+image_path+'favicon.png',
                     os.getcwd()+'/'+public_path+'favicon.png')
