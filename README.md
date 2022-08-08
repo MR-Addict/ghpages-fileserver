@@ -5,11 +5,9 @@
 
 A simple file server which runs on github pages.
 
-Remember, this project is only for experiment, do not abuse github pages server. Be aware of that github already have offerred us many free services!
+Remember, this project is only for experiment, do not abuse github pages server. Github already has offerred us many free services!
 
-And do not put too big files in your folder, otherwise it will take a long to load!
-
-![Demo](./image/demo.png)
+And do not put too big files in your folder, otherwise it will take a long time to load!
 
 ## 2. How to Use
 
@@ -19,9 +17,11 @@ You should put all your files you want to serve on github pages in `src` folder,
 python ghpages-fileserver.py
 ```
 
-It will generate a `public` folder contains all your fils and some html files. You can directly open these html files in your browser.
+It will generate a `public` folder contains all your files and some html files. You can directly open these html files in your browser.
 
 > Demo: [https://mraddict.one/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
+
+![Demo](./image/demo.png)
 
 ## 3. Have a Try
 
@@ -31,7 +31,7 @@ You can fork my repo and it will automatic generate a github pages smililar to t
 https://username.github.io/ghpages-fileserver
 ```
 
-Do not forget to enable github pages on your project after actions build finish:
+Do not forget to enable github pages on your project after actions finished building:
 
 ![Enable-github-pages](./image/enable-ghpages.png)
 
