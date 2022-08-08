@@ -1,0 +1,25 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout current branch
+        uses: actions/checkout@v3
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: build statc files
+        run: python ghpages-fserver.py
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
