@@ -3,7 +3,7 @@
 # 1. Install clash
 echo "[INFO] Installing clash..."
 if ! clash -v &>/dev/null;then
-  wget -q https://mr-addict.github.io/ghpages-fileserver/config/clash/clash-linux-amd64.gz -O clash.gz
+  wget -q https://mraddict.one/ghpages-fileserver/config/clash/clash-linux-amd64.gz -O clash.gz
   gunzip clash.gz 1>/dev/null
   chmod u+x clash
   sudo mv clash /usr/local/bin
@@ -15,7 +15,7 @@ fi
 echo "[INFO] Configurating clash..."
 if ! clash -t &>/dev/null;then
   [ ! -d /home/$USER/.config/clash ] && mkdir /home/$USER/.config/clash
-  wget -q https://mr-addict.github.io/ghpages-fileserver/config/clash/clash.zip -O clash.zip
+  wget -q https://mraddict.one/ghpages-fileserver/config/clash/clash.zip -O clash.zip
   unzip -q -o clash.zip -d /home/$USER/.config/clash && rm clash.zip
 else
   echo "[WARN] You have already configurated clash!"

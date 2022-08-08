@@ -3,7 +3,7 @@
 # Config alias
 echo "[INFO] Configurating alias..."
 if [ ! -f /home/$USER/.bash_aliases ];then
-  wget -q https://mr-addict.github.io/ghpages-fileserver/config/alias/bash_aliases -O /home/$USER/.bash_aliases
+  wget -q https://mraddict.one/ghpages-fileserver/config/alias/bash_aliases -O /home/$USER/.bash_aliases
 else
   echo "[WARN] You have already configurate alias in $USER!"
 fi

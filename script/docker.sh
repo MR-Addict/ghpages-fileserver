@@ -11,7 +11,7 @@ fi
 
 # 2. Config daemon.json for docker
 if ! sudo test -f /etc/docker/daemon.json ;then
-  sudo wget -q https://mr-addict.github.io/ghpages-fileserver/config/docker/daemon.json -O /etc/docker/daemon.json
+  sudo wget -q https://mraddict.one/ghpages-fileserver/config/docker/daemon.json -O /etc/docker/daemon.json
 else
   echo "[WARN] You have configurated daemon.json!"
 fi
