@@ -46,13 +46,13 @@ for dir in all_files.keys():
     for file in all_files[dir]:
         # 4.3.1 Add next Folder Link
         if os.path.isdir(dir+file):
-            index += '<tr><td><i class="fa fa-folder"></i><a href="./' + \
-                file+'/">'+file+'</a></td><td>'
+            index += '<tr><td><i class="fa fa-folder"></i><a href="./{}">{}</a></td><td>'.format(
+                file, file)
 
         # 4.3.2 Add current file link
         else:
-            index += '<tr><td><i class="fa fa-file"></i><a href="./' + \
-                file+'">'+file+'</a></td><td>'
+            index += '<tr><td><i class="fa fa-download"></i><a href="./{}" download>{}</a></td><td>'.format(
+                file, file)
 
         # 4.3.3 Add modified time link
         index += str(datetime.datetime.utcfromtimestamp(
