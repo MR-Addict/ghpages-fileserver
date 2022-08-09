@@ -43,7 +43,7 @@ for dir in sorted(all_files.keys(), key=str.lower):
     index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td></tr>'
 
     # 4.3 Table body
-    for file in all_files[dir]:
+    for file in sorted(all_files[dir], key=str.lower):
         # 4.3.1 Add next Folder Link
         if os.path.isdir(dir+file):
             index += '<tr><td><i class="fa fa-folder"></i><a href="./{}">{}</a></td><td>'.format(
