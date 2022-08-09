@@ -30,7 +30,7 @@ if not os.path.exists(public_path+'favicon.png'):
                     os.getcwd()+'/'+public_path+'favicon.png')
 
 # 4. Generate html files
-for dir in sorted(all_files.keys(), key=str.lower):
+for dir in all_files.keys():
     # 4. Table header
     index = index_head+'~'+dir.replace('./src', '')
     index += '</h2><table><tr><th style="width:50%">Name</th><th>Last Modeified</th></tr>'
@@ -43,7 +43,7 @@ for dir in sorted(all_files.keys(), key=str.lower):
     index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td></tr>'
 
     # 4.3 Table body
-    for file in sorted(all_files[dir], key=str.lower):
+    for file in all_files[dir]:
         # 4.3.1 Add next Folder Link
         if os.path.isdir(dir+file):
             index += '<tr><td><i class="fa fa-folder"></i><a href="./{}">{}</a></td><td>'.format(

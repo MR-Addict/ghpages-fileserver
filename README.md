@@ -21,10 +21,10 @@ python ghpages-fileserver.py
 
 It will copy all your files and generate some html files into a new `public` folder.
 
-Then run below command in `public` folder:
+Then run below command:
 
 ```bash
-python -m http.server 8080
+python -m http.server 8080 --directory public
 ```
 
 It will create a web server on your local machine, you can now visit it at [http://localhost:8080](http://localhost:8080)
