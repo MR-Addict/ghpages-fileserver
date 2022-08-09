@@ -11,21 +11,29 @@ And do not put too big files in your folder, otherwise it will take a long time 
 
 ## 2. How to Use
 
-You should put all your files you want to serve on github pages in `src` folder, then run below command in your project's root path:
+You can clone my repo, and put all your files you want to serve in `src` folder.
 
-```bash
+Then run below command in your projects's root path:
+
+```
 python ghpages-fileserver.py
 ```
 
-It will generate a `public` folder contains all your files and some html files. You can directly open these html files in your browser.
+It will copy all your files and generate some html files into a new `public`.
 
-> Demo: [https://mraddict.one/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
+Then run below command in `public` folder:
+
+```bash
+python -m http.server 8080
+```
+
+It will create a web server on your local machine, you can now visit it at [http://localhost:8080](http://localhost:8080)
 
 ![Demo](./image/demo.png)
 
 ## 3. Have a Try
 
-You can fork my repo and it will automatic generate a github pages smililar to this:
+You can fork my repo and it will automatically generate a github pages smililar to this:
 
 ```
 https://username.github.io/ghpages-fileserver
@@ -34,6 +42,8 @@ https://username.github.io/ghpages-fileserver
 Do not forget to enable github pages on your project after actions finished building:
 
 ![Enable-github-pages](./image/enable-ghpages.png)
+
+> Demo Page: [https://mraddict.one/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
 
 ## 4. Github Pages Usage Limits
 

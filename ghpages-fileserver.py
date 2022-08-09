@@ -30,7 +30,7 @@ if not os.path.exists(public_path+'favicon.png'):
                     os.getcwd()+'/'+public_path+'favicon.png')
 
 # 4. Generate html files
-for dir in all_files.keys():
+for dir in sorted(all_files.keys(), key=str.lower):
     # 4. Table header
     index = index_head+'~'+dir.replace('./src', '')
     index += '</h2><table><tr><th style="width:50%">Name</th><th>Last Modeified</th></tr>'
