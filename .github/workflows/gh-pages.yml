@@ -8,7 +8,7 @@ on:
 
 jobs:
   pages:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout current branch
         uses: actions/checkout@v3
