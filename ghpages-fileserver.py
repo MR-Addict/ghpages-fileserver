@@ -33,31 +33,44 @@ if not os.path.exists(public_path+'favicon.png'):
 for dir in all_files.keys():
     # 4. Table header
     index = index_head+'~'+dir.replace('./src', '')
-    index += '</h2><table><tr><th style="width:50%">Name</th><th>Last Modeified</th></tr>'
+    index += '</h2><table><tr><th style="width:33%">Name</th><th style="width: 33%">Last Modefied</th><th>Size</th></tr>'
 
     # 4.2 Add return link
     if len(dir.split('/')) == 3:
         index += '<tr><td><a href="./" '
     else:
         index += '<tr><td><a href="../" '
-    index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td></tr>'
+    index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td><td>..</td></tr>'
 
     # 4.3 Table body
     for file in all_files[dir]:
         # 4.3.1 Add next Folder Link
         if os.path.isdir(dir+file):
-            index += '<tr><td><i class="fa fa-folder"></i><a href="./{}">{}</a></td><td>'.format(
+            index += '<tr><td><i class="fa fa-folder"></i><a href="./{}">{}</a></td>'.format(
                 file, file)
 
         # 4.3.2 Add current file link
         else:
-            index += '<tr><td><i class="fa fa-download"></i><a href="./{}" download>{}</a></td><td>'.format(
+            index += '<tr><td><i class="fa fa-download"></i><a href="./{}" download>{}</a></td>'.format(
                 file, file)
 
         # 4.3.3 Add modified time link
-        index += str(datetime.datetime.utcfromtimestamp(
-            os.path.getmtime(dir+file)).strftime('%Y-%m-%d %H:%M:%S'))
-        index += '</td></tr>'
+        index += '<td>{}</td>'.format(str(datetime.datetime.utcfromtimestamp(
+            os.path.getmtime(dir+file)).strftime('%Y-%m-%d %H:%M:%S')))
+
+        # 4.3.4 Add file size
+        if os.path.isfile(dir+file):
+            file_size = os.path.getsize(dir+file)
+            if file_size < 1024:
+                index += '<td>{} B</td></tr>'.format(file_size)
+            elif file_size < 1024**2:
+                index += '<td>{:.2f} KB</td></tr>'.format(file_size/1024)
+            elif file_size < 1024**3:
+                index += '<td>{:.2f} MB</td></tr>'.format(file_size/(1024**2))
+            else:
+                index += '<td>{:.2f} GB</td></tr>'.format(file_size/(1024**3))
+        else:
+            index += '<td>..</td></tr>'
 
     # 4.4 Table end
     index += '</table></body></html>'
