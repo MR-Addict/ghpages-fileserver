@@ -1,4 +1,3 @@
-from distutils import dir_util
 import os
 import shutil
 import datetime
@@ -20,9 +19,12 @@ def get_files(path):
 
 # 2. Copy src files to public
 get_files(src_path)
-if os.path.exists(public_path):
-    shutil.rmtree(os.getcwd()+public_path)
-shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd()+'/'+public_path)
+# if os.path.exists(public_path):
+#     shutil.rmtree(os.getcwd()+public_path)
+# shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd()+'/'+public_path)
+# Only works on 3.8+
+shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd() +
+                '/'+public_path, dirs_exist_ok=True)
 
 # 3. Copy favicon image to public
 if not os.path.exists(public_path+'favicon.png'):
