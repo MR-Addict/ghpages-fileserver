@@ -29,7 +29,7 @@ python -m http.server 8080 --directory public
 
 It will create a web server on your local machine, you can now visit it at [http://localhost:8080](http://localhost:8080)
 
-![Demo](./image/demo.png)
+![Demo](./images/demo.png)
 
 ## 3. Have a Try
 
@@ -41,7 +41,7 @@ https://username.github.io/ghpages-fileserver
 
 Do not forget to enable github pages on your project after actions finished building:
 
-![Enable-github-pages](./image/enable-ghpages.png)
+![Enable-github-pages](./images/enable-ghpages.png)
 
 > Demo Page: [https://mraddict.one/ghpages-fileserver](https://mraddict.one/ghpages-fileserver)
 
