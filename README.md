@@ -13,9 +13,18 @@ And do not put too big files in your folder too, otherwise it will take a long t
 
 You can clone my repo, and put all your files you want to serve in `src` folder.
 
-Then run below command in your projects's root path:
+Then, you need to config some parameters in `ghpages-fileserver.py` file for your own needs:
 
+```python
+src_path = './src/'
+public_path = './public/'
+image_path = './images/site_img/'
+site_link = 'https://mraddict.one/ghpages-fileserver/'
 ```
+
+After that run below command in your projects's root path:
+
+```bash
 python ghpages-fileserver.py
 ```
 
