@@ -5,7 +5,7 @@ import datetime
 all_files = {}
 src_path = './src/'
 public_path = './public/'
-image_path = './images/'
+image_path = './images/site_img/'
 site_link = 'https://mraddict.one/ghpages-fileserver/'
 index_head = '<!DOCTYPE html><html lang="en"> <head> <title>File Server</title> <meta name="viewport" content="width=device-width, initial-scale=1" /> <link rel="icon" href="site_link/site_img/favicon.png" /> <style> *{margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}html{font-size: 62.5%;}body{padding: 2rem; font-size: 1.5rem;}p{ font-size: 2.5rem;}table{width: 100%; border-collapse: collapse;}table td, table th{padding: 1rem; border: 0.1rem solid #ddd;}table tr:nth-child(even){background-color: #ebebeb;}table th{text-align: left; background-color: #5da68d; color: white;}a{color: blue; text-decoration: none;}td a{padding: 1rem;}p a{padding: 0.5rem;}td img {height: 1.4rem;}footer{text-align: center;margin: 1rem auto;}@media screen and (max-width: 800px) {html {font-size: 40%;}} </style></head><body><p>'.replace(
     "site_link/", site_link)
@@ -26,7 +26,7 @@ shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd() +
                 '/'+public_path, dirs_exist_ok=True)
 
 # 3. Copy images to public img folder
-shutil.copytree(os.getcwd()+'/'+image_path+'site_img', os.getcwd() +
+shutil.copytree(os.getcwd()+'/'+image_path, os.getcwd() +
                 '/'+public_path+'site_img', dirs_exist_ok=True)
 
 # 4. Generate html files
