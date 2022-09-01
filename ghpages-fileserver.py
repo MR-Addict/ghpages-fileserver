@@ -6,7 +6,7 @@ all_files = {}
 src_path = './src/'
 public_path = './public/'
 image_path = './image/'
-index_head = '<!DOCTYPE html><html lang="en"><head><title>File Server</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="https://mraddict.one/ghpages-fileserver/favicon.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><style>table {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}table td,table th {border: 1px solid #ddd;padding: 8px;}table tr:nth-child(even) {background-color: #ebebeb;}table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #5da68d;color: white;}a {color: blue;text-decoration:none;padding: 8px;}h2 {padding-left: 8px;}</style></head><body><h2>'
+index_head = '<!DOCTYPE html><html lang="en"> <head> <title>File Server</title> <meta name="viewport" content="width=device-width, initial-scale=1" /> <link rel="icon" href="https://mraddict.one/ghpages-fileserver/favicon.png" /> <style> * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; } html { font-size: 62.5%; } body { padding: 2rem; font-size: 1.5rem; } table { width: 100%; border-collapse: collapse; } table td, table th { padding: 1rem; border: 0.1rem solid #ddd; } table tr:nth-child(even) { background-color: #ebebeb; } table th { padding: 1rem; text-align: left; background-color: #5da68d; color: white; } a { color: blue; text-decoration: none; padding: 1rem; } td img {height: 1.4rem;} </style></head><body><h2>'
 
 
 # 1. Convert all directroies files into a dictionary
@@ -26,10 +26,21 @@ get_files(src_path)
 shutil.copytree(os.getcwd()+'/'+src_path, os.getcwd() +
                 '/'+public_path, dirs_exist_ok=True)
 
-# 3. Copy favicon image to public
-if not os.path.exists(public_path+'favicon.png'):
+# 3. Copy image to public img folder
+if not os.path.exists(public_path+'img'):
+    os.mkdir(os.getcwd()+'/'+public_path+'img')
+if not os.path.exists(public_path+'/img/favicon.png'):
     shutil.copyfile(os.getcwd()+'/'+image_path+'favicon.png',
-                    os.getcwd()+'/'+public_path+'favicon.png')
+                    os.getcwd()+'/'+public_path+'/img/favicon.png')
+if not os.path.exists(public_path+'/img/download.svg'):
+    shutil.copyfile(os.getcwd()+'/'+image_path+'download.svg',
+                    os.getcwd()+'/'+public_path+'/img/download.svg')
+if not os.path.exists(public_path+'/img/folder.svg'):
+    shutil.copyfile(os.getcwd()+'/'+image_path+'folder.svg',
+                    os.getcwd()+'/'+public_path+'/img/folder.svg')
+if not os.path.exists(public_path+'/img/arrow.svg'):
+    shutil.copyfile(os.getcwd()+'/'+image_path+'arrow.svg',
+                    os.getcwd()+'/'+public_path+'/img/arrow.svg')
 
 # 4. Generate html files
 for dir in all_files.keys():
@@ -42,18 +53,18 @@ for dir in all_files.keys():
         index += '<tr><td><a href="./" '
     else:
         index += '<tr><td><a href="../" '
-    index += 'style="color: black"><i class="fa fa-arrow-left"></i></a></td><td>..</td><td>..</td></tr>'
+    index += 'style="color: black"><img src="/img/arrow.svg" alt="arrow" /></a></td><td>..</td><td>..</td></tr>'
 
     # 4.3 Table body
     for file in all_files[dir]:
         # 4.3.1 Add next Folder Link
         if os.path.isdir(dir+file):
-            index += '<tr><td><i class="fa fa-folder"></i><a href="{}/">{}</a></td>'.format(
+            index += '<tr><td><img src="/img/folder.svg" alt="folder" /><a href="{}/">{}</a></td>'.format(
                 file, file)
 
         # 4.3.2 Add current file link
         else:
-            index += '<tr><td><i class="fa fa-download"></i><a href="{}" download>{}</a></td>'.format(
+            index += '<tr><td><img src="/img/download.svg" alt="download" /><a href="{}" download>{}</a></td>'.format(
                 file, file)
 
         # 4.3.3 Add modified time link
