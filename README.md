@@ -19,7 +19,7 @@ Then, you need to config some parameters in `ghpages-fileserver.py` file for you
 src_path = './src/'
 public_path = './public/'
 image_path = './images/site_img/'
-site_link = 'https://mraddict.one/ghpages-fileserver/'
+site_link = 'https://mr-addict.github.io/ghpages-fileserver/'
 ```
 
 After that run below command in your projects's root path:
@@ -52,7 +52,7 @@ Do not forget to enable github pages on your project after actions finished buil
 
 ![Enable-github-pages](./images/enable-ghpages.png)
 
-> Demo Page: [https://mraddict.one/ghpages-fileserver](https://mraddict.one/ghpages-fileserver)
+> Demo Page: [https://mr-addict.github.io/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
 
 ## 4. Github Pages Usage Limits
 
