@@ -11,7 +11,7 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout current branch
+      - name: checkout branch
         uses: actions/checkout@v3
       - name: setup python
         uses: actions/setup-python@v4
