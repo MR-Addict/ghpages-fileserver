@@ -73,13 +73,12 @@ for dir in all_files.keys():
                          'file.svg', os.getcwd()+'/'+dir.replace(src_path, public_path))
             table_row += template["table_row_file"].replace(
                 "PATH", file).replace("DATE", modified_date).replace(
-                "SIZE", file).replace("NAME", file_size)
+                "SIZE", file_size)
         elif os.path.isdir(dir+file):
             shutil.copy2(os.getcwd()+'/'+pages_path +
                          'folder.svg', os.getcwd()+'/'+dir.replace(src_path, public_path))
             table_row += template["table_row_foler"].replace(
-                "PATH", file).replace("DATE", modified_date).replace(
-                "SIZE", file).replace("NAME", file_size)
+                "PATH", file).replace("DATE", modified_date).replace("NAME", file_size)
 
     previous_dots = ''
     for i in range(len((dir.split('/')))-3):
