@@ -1,4 +1,4 @@
-<h1>Github Pages Fileserver👻<img src="https://github.com/MR-Addict/ghpages-fileserver/actions/workflows/gh-pages.yml/badge.svg?branch=main" />
+<h1>Github Pages Fileserver👻<img src="https://github.com/MR-Addict/ghpages-fileserver/actions/workflows/pages.yml/badge.svg?branch=main" />
 </h1>
 
 ## 1. Description

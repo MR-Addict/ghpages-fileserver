@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+  workflow_dispatch:
 
 jobs:
   pages:
@@ -17,7 +18,7 @@ jobs:
         with:
           python-version: 3.9
       - name: build static files
-        run: python ghpages-fileserver.py
+        run: python main.py
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
