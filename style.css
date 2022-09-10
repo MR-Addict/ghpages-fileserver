@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+.header {
+  font-size: 2.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 1rem;
+  border: 0.1rem solid #ddd;
+}
+table tr:nth-child(even) {
+  background-color: #ebebeb;
+}
+table th {
+  text-align: left;
+  background-color: #5da68d;
+  color: white;
+}
+a {
+  color: blue;
+  text-decoration: none;
+}
+td a {
+  padding: 1rem;
+}
+p a {
+  padding: 0.5rem;
+}
+td img {
+  height: 1.4rem;
+}
+footer {
+  text-align: center;
+  margin: 1rem auto;
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 40%;
+  }
+}
