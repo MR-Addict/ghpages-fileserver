@@ -7,7 +7,6 @@ all_files = {}
 src_path = './src/'
 public_path = './public/'
 pages_path = './pages/'
-site_link = 'https://mr-addict.github.io/ghpages-fileserver/'
 
 template = yaml.load(open("template/template.yaml"), yaml.Loader)
 with open('template/template.html', 'r') as file:
