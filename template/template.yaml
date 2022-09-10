@@ -1,0 +1,3 @@
+header_link: '<a href="PATH">NAME</a>/'
+table_row_foler: '<tr><td><img src="folder.svg" alt="folder"/><a href="PATH/">PATH</a></td><td>DATE</td><td>SIZE</td></tr>'
+table_row_file: '<tr><td><img src="file.svg" alt="folder"/><a href="PATH" download>PATH</a></td><td>DATE</td><td>SIZE</td></tr>'

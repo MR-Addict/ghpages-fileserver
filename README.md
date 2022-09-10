@@ -11,24 +11,25 @@ And do not put too big files in your folder too, otherwise it will take a long t
 
 ## 2. How to Use
 
+### 2.1 Clone repository
+
 You can clone my repo, and put all your files you want to serve in `src` folder.
 
-Then, you need to config some parameters in `ghpages-fileserver.py` file for your own needs:
-
-```python
-src_path = './src/'
-public_path = './public/'
-image_path = './images/site_img/'
-site_link = 'https://mr-addict.github.io/ghpages-fileserver/'
 ```
+git clone https://github.com/MR-Addict/ghpages-fileserver.git
+```
+
+### 2.2 Generate static files
 
 After that run below command in your projects's root path:
 
 ```bash
-python ghpages-fileserver.py
+python main.py
 ```
 
 It will copy all your files and generate some html files into a new `public` folder.
+
+### 2.3 Build web server
 
 Then run below command:
 
@@ -38,7 +39,7 @@ python -m http.server 8080 --directory public
 
 It will create a web server on your local machine, you can now visit it at [http://localhost:8080](http://localhost:8080)
 
-![Demo](./images/demo.png)
+![Demo](demo.png)
 
 ## 3. Have a Try
 
@@ -50,7 +51,7 @@ https://username.github.io/ghpages-fileserver
 
 Do not forget to enable github pages on your project after actions finished building:
 
-![Enable-github-pages](./images/enable-ghpages.png)
+![Enable-github-pages](enable-ghpages.png)
 
 > Demo Page: [https://mr-addict.github.io/ghpages-fileserver](https://mr-addict.github.io/ghpages-fileserver)
 
