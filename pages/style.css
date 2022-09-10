@@ -4,16 +4,24 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
   padding: 2rem;
   font-size: 1.5rem;
 }
+
 .header {
+  margin-bottom: 1rem;
   font-size: 2.5rem;
 }
+.header a {
+  padding: 0.5rem;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -38,16 +46,15 @@ a {
 td a {
   padding: 1rem;
 }
-p a {
-  padding: 0.5rem;
-}
 td img {
   height: 1.4rem;
 }
+
 footer {
   text-align: center;
   margin: 1rem auto;
 }
+
 @media screen and (max-width: 800px) {
   html {
     font-size: 40%;
