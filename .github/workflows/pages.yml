@@ -13,14 +13,17 @@ jobs:
     steps:
       - name: checkout current branch
         uses: actions/checkout@v3
-      - name: Setup python
+      - name: setup python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
+          cache: "pip"
+      - name: install requirements
+        run: pip install -r requirements.txt
       - name: build static files
         run: python main.py
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: public
